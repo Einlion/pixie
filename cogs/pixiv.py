@@ -188,7 +188,7 @@ class Pixiv(commands.Cog):
         inserts = []
         for info in artist_info_packets:
             total = info["total"]
-            inserts.append((info["ID"], total["illusts"] - 1, total["manga"]))
+            inserts.append((info["ID"], total["illusts"], total["manga"]))
         async with aiosqlite.connect("artists.db") as c:
             await c.executemany("INSERT OR IGNORE INTO Artists VALUES(?,?,?)", inserts)
             await c.commit()
