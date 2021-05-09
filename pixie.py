@@ -49,13 +49,13 @@ async def on_message(message):
 
 @bot.event
 async def on_command_error(ctx, error):
-    if isinstance(error, commands.CommandNotFound):
-        return
-    if isinstance(error, commands.MissingRequiredArgument) or isinstance(
-        error, commands.BadArgument
-    ):
-        await ctx.send("This command takes ``pixiv ID`` as a parameter")
-        return
+    # if isinstance(error, commands.CommandNotFound):
+    #     return
+    # if isinstance(error, commands.MissingRequiredArgument) or isinstance(
+    #     error, commands.BadArgument
+    # ):
+    #     await ctx.send("This command takes ``pixiv ID`` as a parameter")
+    #     return
     raise error
 
 
