@@ -7,11 +7,7 @@ bot = commands.Bot("!")
 
 
 def reload_helper(reload=False):
-    extensions = [
-        f"cogs.{extension[:-3]}"
-        for extension in os.listdir("cogs")
-        if extension.endswith(".py")
-    ]
+    extensions = [f"cogs.{extension[:-3]}" for extension in os.listdir("cogs") if extension.endswith(".py")]
     for extension in extensions:
         try:
             if reload:
